@@ -649,7 +649,10 @@ def cleanup():
         client.stop()
         del clients[account_id]
     print("Cleanup completed")
-
+@app.route("/")
+def home():
+    return "App Route / Working"
+    
 @app.route('/start_client', methods=['GET'])
 def start_client():
     if shutting_down:
